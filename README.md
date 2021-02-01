@@ -1,24 +1,13 @@
-# README
+# Cafeteria Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a cafeteria maganement application for supporting multiple roles (customers, billing clerks and owner). Build with Ruby on Rails!
 
-Things you may want to cover:
+## Basic Features
+- [ ] Signup, Signin for customers.
+- [ ] Signin for Owner.
+- [ ] Owner should add menu and menu items.
+- [ ] Customer should be able to place order.
+- [ ] Owner should be able to mark the order as delivered.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Database Schema
+![Schema](./screenshots/cafeteria_db.png)
