@@ -1,0 +1,12 @@
+<h1 class="Page-title UserAuth-title">Welcome back!</h1>
+<%= form_with url: sessions_path, class: "UserAuth-form" do |form| %>
+  <div class="UserAuth-input-container">
+    <%= form.email_field :email, required: true, placeholder: "Your email", class: "UserAuth-input" %>
+    <p class="UserAuth-label">Your email</p>
+  </div>
+  <div class="UserAuth-input-container">
+    <%= form.password_field :password, required: true, placeholder: "A strong password", class: "UserAuth-input" %>
+    <p class="UserAuth-label">Your password</p>
+  </div>
+  <%= form.submit "Signin", class: "UserAuth-submit" %>
+<%end%>

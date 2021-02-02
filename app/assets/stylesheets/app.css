@@ -1,10 +1,12 @@
-body {
+.main {
   font-family: "Poppins", sans-serif;
+  max-width: 80%;
+  margin: 50px auto 0;
 }
 
 .Page-title {
   font-size: 1.5rem;
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 .flash-error {
@@ -13,4 +15,5 @@ body {
   text-align: center;
   padding: 10px;
   margin: 0 0 10px;
+  font-family: "Poppins", sans-serif;
 }
