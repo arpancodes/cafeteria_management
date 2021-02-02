@@ -1,0 +1,16 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.Page-title {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+.flash-error {
+  background: rgb(224, 76, 76);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin: 0 0 10px;
+}
