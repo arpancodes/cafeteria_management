@@ -21,10 +21,17 @@
     <%end%>
     <main class="main">
     <% if @current_user %>
+    <% if @current_user.role == "Admin" %>
+      <%= render partial: "partials/nav_admin" %>
+    <%else%>
+      <%= render partial: "partials/nav" %>
+    <%end%>
       <h3 class="userHeader">
         Welcome, <%= @current_user.first_name %>! <%= @current_user.role == "Admin" ? "(Admin)" : "" %>
         <span class="userHeader-signout"><%= link_to "Sign out", destroy_session_path, method: "delete" %></span>
       </h3>
+    <%else%>
+      <%= render partial: "partials/nav_logged_out" %>
     <%end%>
     <%= yield %>
     </main>

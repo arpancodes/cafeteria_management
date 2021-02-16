@@ -1,0 +1,7 @@
+<div class="menu_list">
+  <% @menus.each do |menu| %>
+    <div class="menu_list_item">
+      <h4 class="menu_list_item_title"><%= link_to menu.name,  menu_path(menu.id) %></h4>
+    </div>
+  <%end%>
+</div>

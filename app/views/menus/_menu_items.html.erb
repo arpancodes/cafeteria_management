@@ -1,0 +1,28 @@
+<table class="menu_items_table">
+<tr>
+    <td>Name</td>
+    <td>Price</td>
+    <% if show_add_to_cart %>
+    <td>Add to Cart</td>
+    <%end%>
+  </tr>
+<% @menu.menu_items.each do |item| %>
+  <tr>
+    <td>
+      <div>
+        <p class="menu_item_name"><%= item.name %></p>
+        <p class="menu_item_description"><%= item.description %></p>
+      </div>
+    </td>
+    <td>Rs.<%= item.price %></td>
+<% if show_add_to_cart %>
+    <td><%= link_to "Add To Cart", cart_path(
+      id: @cart.id,
+      item_id: item.id,
+      item_name: item.name,
+      item_price: item.price
+      ), method: :put %></td>
+  </tr>
+  <%end%>
+<%end%>
+</table>
