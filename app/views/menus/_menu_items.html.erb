@@ -26,7 +26,7 @@
         item_price: item.price
         ), method: :put %></td>
     <%else%>
-      <td><%= link_to "Remove from Menu", menu_item_path(id: item.id, menu_id: @menu.id), method: :delete %></td>
+      <td class="remove_from_menu"><%= link_to "<i class=\"fa fa-times\" aria-hidden=\"true\"></i>".html_safe, menu_item_path(id: item.id, menu_id: @menu.id), method: :delete %></td>
     <%end%>
     </tr>
   <%end%>
