@@ -29,7 +29,7 @@
   margin: 0;
 }
 
-.order_delivered {
+.order_delivered, .order_status {
   background-color: rgb(13, 138, 61);
   color: rgb(211, 216, 211);
   transform: skew(-10deg);
@@ -42,4 +42,8 @@
   background-color: rgb(215, 248, 243);
   margin: 10px 0 20px;
   color: rgb(27, 10, 44);
+}
+
+.order_status.pending{
+  background-color: red;
 }
