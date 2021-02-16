@@ -7,8 +7,18 @@ class CartsController < ApplicationController
     cart = Cart.find(cart_id)
 
     item_in_cart = CartItem.find_by({ menu_item_id: item_id })
-
-    if item_in_cart
+    if item_in_cart && params[:op] == "REDUCE"
+      item_in_cart.quantity -= 1
+      cart.total_price -= item_in_cart.menu_item_price
+      cart.save
+      if item_in_cart.quantity < 1
+        item_in_cart.destroy
+        redirect_to menus_path
+      else
+        item_in_cart.save
+        redirect_to menus_path
+      end
+    elsif item_in_cart
       item_in_cart.quantity += 1
       item_in_cart.save
       redirect_to menus_path

@@ -1,5 +1,5 @@
 .menu_items_table {
-  width: 100%;
+  width: 80%;
   margin: 20px auto;
 }
 
@@ -36,10 +36,14 @@
 
 .menu_cart__container {
   display: flex;
+  align-items: flex-start;
 }
+
 .cart__container {
   width: 50%;
-  outline: 1px solid;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 
 .menu_list {
@@ -102,4 +106,29 @@
   padding: 0 5px;
   display: inline-block;
   font-size: 0.8rem;
+}
+
+.add_to_cart {
+  text-align: center;
+}
+.add_to_cart a {
+  font-size: 1.5rem;
+  color: rgb(64, 150, 30);
+}
+.cart_item__container{
+  width: 100%;
+}
+.small{
+  font-size: .5rem;
+}
+
+.place_order_button{
+  width: 100%;
+  text-transform: uppercase;
+  border: 1px solid rgb(7, 77, 5);
+  background-color: rgb(47, 143, 63);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 15px
 }

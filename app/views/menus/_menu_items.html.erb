@@ -19,7 +19,7 @@
       </td>
       <td>Rs.<%= item.price %></td>
     <% if show_add_to_cart %>
-      <td><%= link_to "Add To Cart", cart_path(
+      <td class="add_to_cart"><%= link_to "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>".html_safe, cart_path(
         id: @cart.id,
         item_id: item.id,
         item_name: item.name,
