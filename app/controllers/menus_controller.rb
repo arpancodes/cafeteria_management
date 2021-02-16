@@ -1,7 +1,7 @@
 class MenusController < ApplicationController
   def index
     if @current_user.role == "Admin"
-      @menus = Menu.all
+      @menus = Menu.order(updated_at: :desc)
       render "manage"
     else
       @menu = Menu.find_by(is_primary: true)
@@ -55,7 +55,22 @@ class MenusController < ApplicationController
 
   def destroy
     menu = Menu.find(params[:id])
-    menu.destroy
+    if menu.is_primary
+      flash[:error] = "You can't delete a primary menu!"
+    else
+      menu.destroy
+    end
+    redirect_to menus_path
+  end
+
+  def setPrimary
+    Menu.all.each do |menu|
+      menu.is_primary = false
+      menu.save
+    end
+    menu = Menu.find(params[:id])
+    menu.is_primary = true
+    menu.save
     redirect_to menus_path
   end
 end

@@ -10,6 +10,11 @@
       <h4 class="menu_list_item_title"><%= link_to menu.name, menu_path(menu.id) %></h4>
       <p class="menu_list_item_description"><%=  menu.description %></p>
       <span class="menu_list_item_delete"><%= link_to "Delete Menu", menu_path(menu.id), method: :delete %></span>
+      <% unless menu.is_primary %>
+      <span class="menu_list_item_set_primary"><%= link_to "Set As Primary", set_primary_menu_path(menu.id), method: :put %></span>
+      <%else%>
+        <span class="menu_list_item_primary">Primary Menu</span>
+      <%end%>
     </div>
   <%end%>
 </div>
