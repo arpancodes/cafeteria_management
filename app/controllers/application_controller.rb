@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :ensure_user_logged_in
 
+  def prevent_relogin
+    if current_user
+      redirect_to menus_path
+    else
+      nil
+    end
+  end
+
   def ensure_admin_logged_in
     unless @current_user.role == "Admin"
       redirect_to menus_path
