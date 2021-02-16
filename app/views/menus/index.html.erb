@@ -1,0 +1,35 @@
+  <div>
+    <h2><%= @menu.name %></h2>
+    <h3><%= @menu.description %></h3>
+    <div class="menu_cart__container">
+
+    <table class="menu_items_table">
+    <tr>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Add to Cart</td>
+      </tr>
+    <% @menu.menu_items.each do |item| %>
+      <tr>
+        <td>
+          <div>
+            <p class="menu_item_name"><%= item.name %></p>
+            <p class="menu_item_description"><%= item.description %></p>
+          </div>
+        </td>
+        <td>Rs.<%= item.price %></td>
+        <td><%= link_to "Add To Cart", cart_path(
+          id: @cart.id,
+          item_id: item.id,
+          item_name: item.name,
+          item_price: item.price
+          ), method: :put %></td>
+        <td></td>
+      </tr>
+    <%end%>
+    </table>
+    <%= render partial: "cart" %>
+    </div>
+  </div>
+
+  <%= javascript_pack_tag 'handle_cart' %>

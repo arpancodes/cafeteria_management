@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
     unless current_user
       # halt tht request cycle
       redirect_to "/"
+    else
+      @cart = Cart.find_by(user_id: @current_user.id)
     end
   end
 

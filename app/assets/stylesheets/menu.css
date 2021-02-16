@@ -1,0 +1,13 @@
+.menu_title {
+}
+
+.menu_items_table {
+  width: 80%;
+}
+.menu_cart__container {
+  display: flex;
+}
+.cart__container {
+  width: 50%;
+  outline: 1px solid;
+}

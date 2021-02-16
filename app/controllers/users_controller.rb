@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     })
 
     if user.save
+      Cart.create!({ user_id: user.id, total_price: 0.0 })
       session[:current_user_id] = user.id
       redirect_to "/"
     else

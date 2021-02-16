@@ -1,0 +1,10 @@
+<div class="cart__container">
+  <% @cart.cart_items.each do |item| %>
+    <div class="cart_item__container">
+      <p> <%= item.menu_item_name %> - <%= item.menu_item_price %> x <%= item.quantity %> </p>
+    </div>
+  <%end%>
+  <%= form_with url: orders_path , method: "POST" do %>
+      <%= submit_tag "Place Order", class:"TodoAction-delete" %>
+    <% end %>
+</div>
