@@ -1,6 +1,6 @@
   <div>
-    <h2><%= @menu.name %></h2>
-    <h3><%= @menu.description %></h3>
+    <h1 class="Page-title">We are serving <%= @menu.name %>...</h1>
+    <h3 class="page__subheading"><%= @menu.description %></h3>
     <div class="menu_cart__container">
 
     <%= render partial: "menu_items", locals:{

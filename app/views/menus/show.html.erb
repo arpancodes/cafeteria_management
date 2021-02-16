@@ -1,4 +1,4 @@
-<h4><%= @menu.name %></h4>
+<h1 class="Page-title">Edit <%= @menu.name %> menu...</h1>
 <%= form_with url: menu_path(@menu.id), method: "PUT", class:"add_resource_form" do %>
   <%= text_field_tag 'name', nil, class: 'add_resource_input', placeholder: "Dish Name" %>
   <%= text_field_tag 'description', nil, class: 'add_resource_input', placeholder: "Describe the dish..." %>

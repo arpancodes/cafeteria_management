@@ -1,8 +1,9 @@
+<h1 class="Page-title">Order #<%= @order.id %></h1>
 <% if @current_user.role == "Admin" %>
   <p>Ordered By: <%= "#{@order.user.first_name} #{@order.user.last_name} (#{@order.user.email})" %></p>
 <%end%>
 <p><%= "Ordered at: #{@order.date.to_s(:long)}" if @order.date %><p>
-<p><%= "Delivered at: #{@order.delivered_at.to_s(:long)}" if @order.delivered_at %><p>
+<p class="order_delivered"><%= "Delivered at: #{@order.delivered_at.to_s(:long)}" if @order.delivered_at %><p>
 <table class="order_detail_table">
   <tr>
   <th>Description</th>
