@@ -2,12 +2,14 @@
 
 This is a cafeteria maganement application for supporting multiple roles (customers, billing clerks and owner). Build with Ruby on Rails!
 
-## Basic Features (MVP)
-- [X] Signup, Signin for customers.
-- [X] Signin for Owner.
+## Features of the app
+- [ ] Signup, Signin for customers.
+- [ ] Signin for Owner.
 - [ ] Owner should add menu and menu items.
-- [X] Customer should be able to place order.
+- [ ] Customer should be able to place order.
 - [ ] Owner should be able to mark the order as delivered.
+- [ ] Customers should be able to check their order status
+- [ ] Customers should be able to see their order details
 
 ## Sample User details
 **Admin**
