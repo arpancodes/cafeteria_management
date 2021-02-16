@@ -1,0 +1,10 @@
+<% @orders.each do |order| %>
+  <div class="order_list_item">
+    <h4 class="order_title"><%= order.order_items[0].menu_item_name %> <%= "+#{order.order_items.length - 1}" if order.order_items.length > 1 %></h4>
+    <p class="order_by">Ordered By <%= order.user.first_name %> (<%= order.user.email %>) </p>
+    <p class="order_date">Ordered At <%= order.date.to_s(:short) if order.date %></p>
+    <p class="order_delivered"><%= "Delivered At #{order.delivered_at.to_s(:short)}" if order.delivered_at %></p>
+    <span class="order_set_delivered"><%= link_to "Mark As Delvered", order_path(order.id) ,method: :put if !order.delivered_at %></span>
+    <span><%= link_to "Details", order_path(order.id) %></span>
+  </div>
+<%end%>

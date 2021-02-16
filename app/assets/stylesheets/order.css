@@ -1,0 +1,10 @@
+.order_detail_table {
+  width: 80%;
+}
+
+.order_detail_table td {
+  text-align: center;
+}
+.order_detail_table tr:nth-of-type(2n) {
+  background-color: rgb(194, 194, 194);
+}

@@ -3,7 +3,9 @@
     <h3><%= @menu.description %></h3>
     <div class="menu_cart__container">
 
-    <%= render partial: "menu_items" %>
+    <%= render partial: "menu_items", locals:{
+      show_add_to_cart: true
+    } %>
     <%= render partial: "cart" %>
     </div>
   </div>
