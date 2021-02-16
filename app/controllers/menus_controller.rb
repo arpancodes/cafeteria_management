@@ -36,4 +36,26 @@ class MenusController < ApplicationController
       redirect_to menu_path(menu_id)
     end
   end
+
+  def create
+    name = params[:name]
+    description = params[:description]
+    menu = Menu.new({
+      name: name,
+      description: description,
+    })
+
+    if menu.save
+      redirect_to menu_path(menu.id)
+    else
+      flash[:error] = menu.errors.full_messages.join(", ")
+      redirect_to menus_path
+    end
+  end
+
+  def destroy
+    menu = Menu.find(params[:id])
+    menu.destroy
+    redirect_to menus_path
+  end
 end

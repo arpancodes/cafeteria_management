@@ -1,7 +1,15 @@
+<%= form_with url: menus_path, method: "POST", class:"add_menu_form" do %>
+  <%= text_field_tag 'name', nil, class: 'add_menu_input', placeholder: "Menu Name" %>
+  <%= text_field_tag 'description', nil, class: 'add_menu_input', placeholder: "Describe the menu..." %>
+  <%= submit_tag "Add Menu", class: "add_menu_input add_menu_input__submit" %>
+<%end%>
+
 <div class="menu_list">
   <% @menus.each do |menu| %>
     <div class="menu_list_item">
-      <h4 class="menu_list_item_title"><%= link_to menu.name,  menu_path(menu.id) %></h4>
+      <h4 class="menu_list_item_title"><%= link_to menu.name, menu_path(menu.id) %></h4>
+      <p class="menu_list_item_description"><%=  menu.description %></p>
+      <span class="menu_list_item_delete"><%= link_to "Delete Menu", menu_path(menu.id), method: :delete %></span>
     </div>
   <%end%>
 </div>

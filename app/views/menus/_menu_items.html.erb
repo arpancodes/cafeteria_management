@@ -1,28 +1,36 @@
-<table class="menu_items_table">
-<tr>
-    <td>Name</td>
-    <td>Price</td>
-    <% if show_add_to_cart %>
-    <td>Add to Cart</td>
-    <%end%>
-  </tr>
-<% @menu.menu_items.each do |item| %>
+<% if @menu.menu_items.length > 0 %>
+  <table class="menu_items_table">
   <tr>
-    <td>
-      <div>
-        <p class="menu_item_name"><%= item.name %></p>
-        <p class="menu_item_description"><%= item.description %></p>
-      </div>
-    </td>
-    <td>Rs.<%= item.price %></td>
-<% if show_add_to_cart %>
-    <td><%= link_to "Add To Cart", cart_path(
-      id: @cart.id,
-      item_id: item.id,
-      item_name: item.name,
-      item_price: item.price
-      ), method: :put %></td>
-  </tr>
+      <th>Name</th>
+      <th>Price</th>
+      <% if show_add_to_cart %>
+        <th>Add to Cart</th>
+      <%else%>
+        <th>Remove from menu</th>
+      <%end%>
+    </tr>
+  <% @menu.menu_items.each do |item| %>
+    <tr>
+      <td>
+        <div>
+          <p class="menu_item_name"><%= item.name %></p>
+          <p class="menu_item_description"><%= item.description %></p>
+        </div>
+      </td>
+      <td>Rs.<%= item.price %></td>
+    <% if show_add_to_cart %>
+      <td><%= link_to "Add To Cart", cart_path(
+        id: @cart.id,
+        item_id: item.id,
+        item_name: item.name,
+        item_price: item.price
+        ), method: :put %></td>
+    <%else%>
+      <td><%= link_to "Remove from Menu", menu_item_path(id: item.id, menu_id: @menu.id), method: :delete %></td>
+    <%end%>
+    </tr>
   <%end%>
+  </table>
+  <%else%>
+  <h3 class="empty_message">Start adding dishes in the menu!</h3>
 <%end%>
-</table>
