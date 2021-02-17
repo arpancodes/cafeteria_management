@@ -20,6 +20,8 @@ class CartsController < ApplicationController
       end
     elsif item_in_cart
       item_in_cart.quantity += 1
+      cart.total_price += item_in_cart.menu_item_price
+      cart.save
       item_in_cart.save
       redirect_to menus_path
     else
