@@ -33,6 +33,8 @@ class OrdersController < ApplicationController
     end
 
     @cart.cart_items.destroy_all
+    @cart.total_price = 0
+    @cart.save
 
     redirect_to order_path(order.id)
   end
