@@ -7,13 +7,13 @@ This is a cafeteria maganement application for supporting multiple roles (custom
 
 
 ## Features of the app
-- [ ] Signup, Signin for customers.
-- [ ] Signin for Owner.
-- [ ] Owner should add menu and menu items.
-- [ ] Customer should be able to place order.
-- [ ] Owner should be able to mark the order as delivered.
-- [ ] Customers should be able to check their order status
-- [ ] Customers should be able to see their order details
+- [x] Signup, Signin for customers.
+- [x] Signin for Owner.
+- [x] Owner should add menu and menu items.
+- [x] Customer should be able to place order.
+- [x] Owner should be able to mark the order as delivered.
+- [x] Customers should be able to check their order status
+- [x] Customers should be able to see their order details
 
 ## Sample User details
 **Admin**
